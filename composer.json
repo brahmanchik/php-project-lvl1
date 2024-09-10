@@ -1,0 +1,23 @@
+{
+    "name": "hexlet/code",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/wp-cli/php-cli-tools"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Dmitry Tarasov",
+            "email": "brahmanchik@gmail.com"
+        }
+    ],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.0"
+    }
+}
