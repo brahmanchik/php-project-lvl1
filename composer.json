@@ -1,10 +1,11 @@
 {
     "name": "hexlet/code",
+    "description": "proekt hexlet",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/",
-            "BrainGames\\": "src/"
-        }
+        "files": [
+            "src/Cli.php",
+            "src/evengame.php"
+        ]
     },
     "repositories": [
         {
@@ -26,6 +27,6 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even.php"
+        "bin/brain-even"
     ]
 }

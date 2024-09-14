@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php'); // Подключение автозагрузки Composer
+//так автозагрузку не подключать, посмотри как это сделать в проекте которыйй на втором шаге, демонстрационый проект
+
+use function BrainGames\Cli\getName;
+
+getName();
