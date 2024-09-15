@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php'); // Подключение автозагрузки Composer
+
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\engine\getName;
+
+$nameGame = "Brain Gcd";
+$name = getName($nameGame);
+$correctCount = 0;
+
+line("Find the greatest common divisor of given numbers.");
+for($i = 0; $i < 3; $i++) {
+    $numberOne = rand(1, 100);
+    $numberTwo = rand(1, 100);
+    $nod = gmp_gcd($numberOne, $numberTwo);
+    line("Question: %s %s", $numberOne, $numberTwo);
+    $answer = prompt("Your answer");
+    if($answer == $nod) {
+        line("Correct!");
+        $correctCount++;
+    } else {
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!", $answer, $nod, $name);
+        die();
+    }
+    if($correctCount == 3) {
+        line("Congratulations, %s!", $name);
+        die();
+    }
+}

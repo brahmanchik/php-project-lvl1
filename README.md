@@ -3,5 +3,8 @@
 
 <a href="https://codeclimate.com/github/brahmanchik/php-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/3211c6a3660391d72fc1/maintainability" /></a>
 <a href="https://asciinema.org/a/IVQ62vUjK7peJLZ8mfkWaJROu">пример запуска игры brain-even, с победой и поражением игрока.</a><br>
-<a href="https://asciinema.org/a/165DcaWQU85xQsn1iqOUFwFmK">пример запуска игры brain-calc, с победой и поражением игрока.</a>
+<a href="https://asciinema.org/a/165DcaWQU85xQsn1iqOUFwFmK">пример запуска игры brain-calc, с победой и поражением игрока.</a></br>
+<a href="https://asciinema.org/a/QWe5kZJH2WhhDiNzMbARfKuzw">пример запуска игры brain-gcd, с победой и поражением игрока.</a>
+
+
 
