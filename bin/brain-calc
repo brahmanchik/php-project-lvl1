@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php'); // Подключение автозагрузки Composer
+
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\engine\getName;
+
+$nameGame = "Brain Calc";
+$name = getName($nameGame);
+$correctCount = 0;
+
+for($i = 0; $i < 3; $i++) {
+    $operationSymbols = ["+", "-", "*"];
+    $numberOne = rand(0, 100);
+    $numberTwo = rand(0, 100);
+    $operationSymbol = $operationSymbols[array_rand($operationSymbols, 1)];
+
+    switch ($operationSymbol) {
+        case "+":
+            $question = $numberOne + $numberTwo; //выбор правильного ответа на загадный вопрос ниже
+            break;
+        case "-":
+            $question = $numberOne - $numberTwo;
+            break;
+        case "*":
+            $question = $numberOne * $numberTwo;
+            break;
+    }
+
+    line("What is the result of the expression?");
+    line("Question: %s %s %s", $numberOne, $operationSymbol, $numberTwo);
+    $answer = prompt("Your answer");
+
+    if($answer == $question) {
+        line("Correct!");
+        $correctCount++;
+    } else {
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!", $answer, $question, $name);
+        die();
+    }
+
+    if($correctCount == 3) {
+        line("Congratulations, %s!", $name);
+    }
+
+}

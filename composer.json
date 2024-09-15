@@ -4,7 +4,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/evengame.php"
+            "src/evengame.php",
+            "src/Engine.php"
         ]
     },
     "repositories": [
@@ -27,6 +28,7 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ]
 }
