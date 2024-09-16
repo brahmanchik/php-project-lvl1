@@ -1,6 +1,7 @@
 {
     "name": "hexlet/code",
     "description": "proekt hexlet",
+    "license": "MIT",
     "autoload": {
         "files": [
             "src/Cli.php",
@@ -30,6 +31,7 @@
         "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
-        "bin/brain-gcd"
+        "bin/brain-gcd",
+        "bin/brain-progression"
     ]
 }

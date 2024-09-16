@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php'); // Подключение автозагрузки Composer
+
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\engine\getName;
+
+$nameGame = "Brain Gcd";
+$name = getName($nameGame);
+$correctAnswersCount = 0; //счетчик правильных ответов, чтобы выйграть, надо 3 правильных ответа
+
+line("What number is missing in the progression?");
+
+for($i = 0; $i < 3; $i++) {
+    $progressionLength = rand(5,10); //длинна прогрессии
+    $arithmeticProgressionDifference = rand(2, 5);//разность арифмитической прогрессии
+    $startProgression = rand(1, 20);// число с которого будет начинаться прогрессия
+    $arithmeticProgression = []; // арифмитическая прогрессия
+    for($j = $progressionLength;$j > 0; $j--) {
+        $arithmeticProgression[] = $startProgression; //добавляем новое значение в арифмитеческую прогрессию
+        $startProgression = $startProgression + $arithmeticProgressionDifference; //увеличиваем прогрессию на один шаг
+    }
+    $lenghtStartProgression = count($arithmeticProgression) - 1;//длинна прогрессии которая получилась
+    $indexHiddenElement = rand(0, $lenghtStartProgression); //выбираем случайное число, этот элемент будет скрыт в прогрессии
+    $hiddenElement = ($arithmeticProgression[$indexHiddenElement]);//этот элемент будет скрыт в прогрессии
+
+    array_splice($arithmeticProgression, $indexHiddenElement, 1, "..");
+    $arithmeticProgression = implode(" ", $arithmeticProgression);
+    line("Question: %s", $arithmeticProgression);
+    $answer = prompt("Your answer");
+    if($answer == $hiddenElement) {
+        line("Correct!");
+        $correctAnswersCount++;
+    } else {
+        line("'%s' is wrong answer ;(. Correct answer was '%s'. Let's try again, %s!", $answer, $hiddenElement, $name);
+        die();
+    }
+    if($correctAnswersCount == 3) {
+        line("Congratulations, %s!", $name);
+    }
+}
