@@ -7,7 +7,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\engine\getName;
 
-$nameGame = "Brain Gcd";
+$nameGame = "Brain progression";
 $name = getName($nameGame);
 $correctAnswersCount = 0; //счетчик правильных ответов, чтобы выйграть, надо 3 правильных ответа
 
