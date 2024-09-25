@@ -1,12 +1,16 @@
 {
     "name": "hexlet/code",
-    "description": "proekt hexlet",
+    "description": "project hexlet",
     "license": "MIT",
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/evengame.php",
-            "src/Engine.php"
+            "src/Engine.php",
+            "src/Games/brain-even.php",
+            "src/Games/brain-calc.php",
+            "src/Games/brain-gcd.php",
+            "src/Games/brain-progression.php",
+            "src/Games/brain-prime.php"
         ]
     },
     "repositories": [

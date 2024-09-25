@@ -1,16 +1,8 @@
 #!/usr/bin/env php
 <?php
+$autoloadPath = __DIR__ . '/../vendor/autoload.php';
+require_once $autoloadPath; // Подключение автозагрузки Composer
+use function Games\Brain\Even\playEvenGame;
 
-
-
-require_once(__DIR__ . '/../vendor/autoload.php'); // Подключение автозагрузки Composer
-
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\even\getName;
-use function BrainGames\even\playEvenGame;
-
-
-$name = getName();
-playEvenGame($name);
+playEvenGame();
 

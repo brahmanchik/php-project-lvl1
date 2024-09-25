@@ -1,45 +1,9 @@
 #!/usr/bin/env php
 <?php
+$autoloadPath = __DIR__ . '/../vendor/autoload.php';
+require_once $autoloadPath; // Подключение автозагрузки Composer
+use function Games\Brain\Prime\playPrimeGame;
 
-require_once(__DIR__ . '/../vendor/autoload.php'); // Подключение автозагрузки Composer
+playPrimeGame();
 
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\engine\getName;
 
-$nameGame = "Brain prime";
-$name = getName($nameGame);
-$correctCount = 0;
-line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
-$primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31];
-$numbers = [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 17, 18, 19, 21, 23, 25, 29, 30, 31];
-
-for($i = 0; $i < 3; $i++) {
-    $randomNumber = $numbers[array_rand($numbers, 1)];
-    line("Question: %s", $randomNumber);
-
-    if(in_array($randomNumber, $primeNumbers)) {
-        $correctAnswer = "yes";
-    } else {
-        $correctAnswer = "no";
-    }
-
-    $answer = prompt("Your answer");
-
-    if($answer == $correctAnswer) {
-        line("Correct!");
-        $correctCount++;
-    } else {
-        line(
-            "'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!",
-            $answer,
-            $correctAnswer,
-            $name
-        );
-        die();
-    }
-
-}
-if ($correctCount === 3) {
-    line("Congratulations, %s!", $name);
-}
