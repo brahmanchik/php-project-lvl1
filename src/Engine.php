@@ -37,11 +37,7 @@ function counter()
     $numberRounds = 3; //то сколько будет раундов в игре
     return $numberRounds;
 }
-function rules($rulesGame)
-{
-    line($rulesGame); //вывод правил игры
-}
-function question($question)//функция запроса ответа на вопрос
+function question(string $question): string//функция запроса ответа на вопрос
 {
     line("Question: %s", $question);
     $answer = prompt("Your answer: ");

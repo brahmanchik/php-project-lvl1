@@ -15,7 +15,7 @@ function gameLogic(): array
     $primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]; // список простых чисел
     $numbers = [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 17, 18, 19, 21, 23, 25, 29, 30, 31];
     $randomNumber = $numbers[array_rand($numbers, 1)];
-    if (in_array($randomNumber, $primeNumbers)) {
+    if (in_array($randomNumber, $primeNumbers, true)) {
         $correctAnswer = "yes"; //число простое
     } else {
         $correctAnswer = "no";
