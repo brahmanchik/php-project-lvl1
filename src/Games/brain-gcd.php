@@ -12,7 +12,8 @@ use function BrainGames\Engine\playRound;
 use function BrainGames\Engine\greeting;
 
 //Функция использующая алгоритм Евклида, чтобы найти НОД
-function gcd($a, $b) {
+function gcd($a, $b)
+{
     while ($b != 0) {
         $temp = $b;
         $b = $a % $b;
