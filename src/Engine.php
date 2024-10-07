@@ -24,6 +24,7 @@ use function cli\prompt;
  * @link        https://example.com
  * @php_version 8.3.11
  */
+const NUMBER_OF_ROUNDS = 3;
 //функция приветствия и начала игры
 function greeting(): string
 {
@@ -32,38 +33,37 @@ function greeting(): string
     line("Hello, %s!", $name);
     return $name;
 }
-function counter()
-{
-    $numberRounds = 3; //то сколько будет раундов в игре
-    return $numberRounds;
-}
-function question(string $question): string//функция запроса ответа на вопрос
+function question($question): string//функция запроса ответа на вопрос
 {
     line("Question: %s", $question);
-    $answer = prompt("Your answer: ");
+    $answer = prompt("Your answer");
     return $answer;
 }
 // ниже главная функция движка
-function playRound(array $roundData, int $roundIndex, string $rulesGame, string $name): void
+function playRound(array $roundData, string $rulesGame): void
 {
-    $numberOfRounds = counter();
-    if ($roundIndex == 0) {
-        line($rulesGame); // если первый раунд, выводим правила
-    }
-    $answer = question($roundData[0]);
-    //Сравнивается ответ пользователя с заранее вычисленным правильным ответом
-    if ($answer != $roundData[1]) {
-        line(
-            "'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!",
-            $answer,
-            $roundData[1],
-            $name
-        );
-        die();
-    } else {
-        line("Correct!");
-    }
-    if ($roundIndex == $numberOfRounds - 1) {
-        line("Congratulations, %s!", $name); //вывод, если выйграл все раунды
+    $name = greeting();
+
+    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
+
+        if ($roundIndex === 0) {
+            line($rulesGame); // если первый раунд, выводим правила
+        }
+        $answer = question($roundData[$roundIndex][0]);
+        //Сравнивается ответ пользователя с заранее вычисленным правильным ответом
+        if ($answer != $roundData[$roundIndex][1]) {
+            line(
+                "'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!",
+                $answer,
+                $roundData[$roundIndex][1],
+                $name
+            );
+            return;
+        } else {
+            line("Correct!");
+        }
+        if ($roundIndex === NUMBER_OF_ROUNDS - 1) {
+            line("Congratulations, %s!", $name); //вывод, если выйграл все раунды
+        }
     }
 }

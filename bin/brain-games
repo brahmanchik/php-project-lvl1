@@ -1,9 +1,13 @@
 #!/usr/bin/env php
 <?php
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
 
-$autoloadPath = __DIR__ . '/../vendor/autoload.php';
-require_once $autoloadPath; // Подключение автозагрузки Composer
-//так автозагрузку не подключать, посмотри как это сделать в проекте которыйй на втором шаге, демонстрационый проект
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+} // Подключение автозагрузки Composer
 
 use function BrainGames\Cli\getName;
 

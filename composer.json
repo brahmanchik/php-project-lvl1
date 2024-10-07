@@ -6,11 +6,11 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
-            "src/Games/brain-even.php",
-            "src/Games/brain-calc.php",
-            "src/Games/brain-gcd.php",
-            "src/Games/brain-progression.php",
-            "src/Games/brain-prime.php"
+            "src/Games/BrainEven.php",
+            "src/Games/BrainCalc.php",
+            "src/Games/BrainGcd.php",
+            "src/Games/BrainProgression.php",
+            "src/Games/BrainPrime.php"
         ]
     },
     "repositories": [
@@ -32,11 +32,11 @@
         "squizlabs/php_codesniffer": "^3.10.2"
     },
     "bin": [
-        "bin/brain-games",
-        "bin/brain-even",
-        "bin/brain-calc",
-        "bin/brain-gcd",
-        "bin/brain-progression",
-        "bin/brain-prime"
+        "bin/BrainGames",
+        "bin/BrainEven",
+        "bin/BrainCalc",
+        "bin/BrainGcd",
+        "bin/BrainProgression",
+        "bin/BrainPrime"
     ]
 }
