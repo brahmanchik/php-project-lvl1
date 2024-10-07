@@ -8,7 +8,9 @@ namespace BrainGames\Games\Prime;
  */
 use function BrainGames\Engine\playRound;
 
-use const BrainGames\Engine\NUMBER_OF_ROUNDS; //  количество раундов в игре
+use const BrainGames\Engine\NUMBER_OF_ROUNDS;
+
+//  количество раундов в игре
 const MIN_VALUE = 1;
 const MAX_VALUE = 31;
 const RULES_GAME = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";

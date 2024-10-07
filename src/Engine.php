@@ -24,6 +24,7 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
+
 const NUMBER_OF_ROUNDS = 3;
 //функция приветствия и начала игры
 function greeting(): string

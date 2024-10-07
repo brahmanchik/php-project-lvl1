@@ -10,8 +10,10 @@ namespace BrainGames\Games\Progression;
  */
 use function BrainGames\Engine\playRound;
 
-use const BrainGames\Engine\NUMBER_OF_ROUNDS; //  количество раундов в игре
-const MIN_LENGHT_PROGRESSION= 5;
+use const BrainGames\Engine\NUMBER_OF_ROUNDS;
+
+//  количество раундов в игре
+const MIN_LENGHT_PROGRESSION = 5;
 const MAX_LENGHT_PROGRESSION = 10;
 const MIN_STEP = 2;
 const MAX_STEP = 5;
