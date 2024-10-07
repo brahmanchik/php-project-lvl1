@@ -32,11 +32,11 @@
         "squizlabs/php_codesniffer": "^3.10.2"
     },
     "bin": [
-        "bin/BrainGames",
-        "bin/BrainEven",
-        "bin/BrainCalc",
-        "bin/BrainGcd",
-        "bin/BrainProgression",
-        "bin/BrainPrime"
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ]
 }
