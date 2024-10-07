@@ -8,6 +8,7 @@ namespace BrainGames\Games\Gcd;
  * Пользователь должен вычислить и ввести наибольший общий делитель этих чисел.
  */
 use function BrainGames\Engine\playRound;
+
 use const BrainGames\Engine\NUMBER_OF_ROUNDS; //  количество раундов в игре
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;

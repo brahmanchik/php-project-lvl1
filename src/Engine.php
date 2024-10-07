@@ -1,10 +1,5 @@
 <?php
 
-namespace BrainGames\Engine;
-
-use function cli\line;
-use function cli\prompt;
-
 /**
  * Этот файл (движок) содержит функции для работы с Brain Games.
  * Этапы работы движка:
@@ -24,6 +19,11 @@ use function cli\prompt;
  * @link        https://example.com
  * @php_version 8.3.11
  */
+
+namespace BrainGames\Engine;
+
+use function cli\line;
+use function cli\prompt;
 const NUMBER_OF_ROUNDS = 3;
 //функция приветствия и начала игры
 function greeting(): string
@@ -43,9 +43,7 @@ function question($question): string//функция запроса ответа
 function playRound(array $roundData, string $rulesGame): void
 {
     $name = greeting();
-
     for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
-
         if ($roundIndex === 0) {
             line($rulesGame); // если первый раунд, выводим правила
         }

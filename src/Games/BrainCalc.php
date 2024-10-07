@@ -7,6 +7,7 @@ namespace BrainGames\Games\Calc;
  * Игра по правилам, аля угадай сколько будет 2 + 2
  */
 use function BrainGames\Engine\playRound;
+
 use const BrainGames\Engine\NUMBER_OF_ROUNDS; //  количество раундов в игре
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
@@ -30,7 +31,7 @@ function calculateResult(string $operationSymbol, int $numberOne, int $numberTwo
     return $result;
 }
 
-function generateQuestionAndAnswer (): array
+function generateQuestionAndAnswer(): array
 {
     //генерирую случайное математическое выражение вида 2 + 2
     $operationSymbols = ["+", "-", "*"];

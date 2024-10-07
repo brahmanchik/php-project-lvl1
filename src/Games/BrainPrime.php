@@ -7,6 +7,7 @@ namespace BrainGames\Games\Prime;
  * В игре показывается число и надо сказать простое оно или нет
  */
 use function BrainGames\Engine\playRound;
+
 use const BrainGames\Engine\NUMBER_OF_ROUNDS; //  количество раундов в игре
 const MIN_VALUE = 1;
 const MAX_VALUE = 31;

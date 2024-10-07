@@ -9,9 +9,10 @@ namespace BrainGames\Games\Progression;
  * Игрок должен определить это число.
  */
 use function BrainGames\Engine\playRound;
+
 use const BrainGames\Engine\NUMBER_OF_ROUNDS; //  количество раундов в игре
-const MIN_LENGHT_Progression = 5;
-const MAX_LENGHT_Progression = 10;
+const MIN_LENGHT_PROGRESSION= 5;
+const MAX_LENGHT_PROGRESSION = 10;
 const MIN_STEP = 2;
 const MAX_STEP = 5;
 const MIN_BEGIN_PROGRESSION = 1;
@@ -20,7 +21,7 @@ const RULES_GAME = "What number is missing in the progression?";
 
 function generateProgression(): array
 {
-    $length = rand(MIN_LENGHT_Progression, MAX_LENGHT_Progression);
+    $length = rand(MIN_LENGHT_PROGRESSION, MAX_LENGHT_PROGRESSION);
     $step = rand(MIN_STEP, MAX_STEP); // шаг прогрессии
     $start = rand(MIN_BEGIN_PROGRESSION, MAX_BEGIN_PROGRESSION); // начальное число прогрессии
     $progression = [];
