@@ -34,7 +34,7 @@ function greeting(): string
     line("Hello, %s!", $name);
     return $name;
 }
-function question($question): string//функция запроса ответа на вопрос
+function question(string $question): string//функция запроса ответа на вопрос
 {
     line("Question: %s", $question);
     $answer = prompt("Your answer");

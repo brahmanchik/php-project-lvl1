@@ -16,6 +16,7 @@ const MAX_VALUE = 100;
 const RULES_GAME = "What is the result of the expression?";
 function calculateResult(string $operationSymbol, int $numberOne, int $numberTwo): int
 {
+    $result = 0;
     switch ($operationSymbol) {
         case "+":
             $result = $numberOne + $numberTwo;
@@ -46,6 +47,7 @@ function generateQuestionAndAnswer(): array
 }
 function playCalcGame()
 {
+    $roundData = [];
     for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос 0-ым значением, и правильный ответ значением 1
     }

@@ -49,6 +49,7 @@ function generateQuestionAndAnswer(): array
 }
 function playPrimeGame()
 {
+    $roundData = [];
     for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer();
     }

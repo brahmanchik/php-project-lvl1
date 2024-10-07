@@ -37,6 +37,7 @@ function generateQuestionAndAnswer(): array
 }
 function playGcdGame()
 {
+    $roundData = [];
     for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос, и правильный ответ
     }

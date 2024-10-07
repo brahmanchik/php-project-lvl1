@@ -14,7 +14,7 @@ use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
 const RULES_GAME = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
-function isEven($number)
+function isEven(int $number)
 {
     return $number % 2 === 0;
 }
@@ -30,6 +30,7 @@ function generateQuestionAndAnswer(): array
 
 function playEvenGame()
 {
+    $roundData = [];
     for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос, и правильный ответ
     }
