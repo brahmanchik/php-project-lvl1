@@ -44,25 +44,21 @@ function question(string $question): string//функция запроса от�
 function playRound(array $roundData, string $rulesGame): void
 {
     $name = greeting();
-    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
-        if ($roundIndex === 0) {
-            line($rulesGame); // если первый раунд, выводим правила
-        }
-        $answer = question($roundData[$roundIndex][0]);
-        //Сравнивается ответ пользователя с заранее вычисленным правильным ответом
-        if ($answer != $roundData[$roundIndex][1]) {
+    line($rulesGame); // Выводим правила один раз перед началом игры
+    foreach ($roundData as [$question, $correctAnswer]) {
+        $answer = question($question);
+        // Сравниваем ответ пользователя с правильным ответом
+        if ($answer != $correctAnswer) {
             line(
                 "'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!",
                 $answer,
-                $roundData[$roundIndex][1],
+                $correctAnswer,
                 $name
             );
             return;
         } else {
             line("Correct!");
         }
-        if ($roundIndex === NUMBER_OF_ROUNDS - 1) {
-            line("Congratulations, %s!", $name); //вывод, если выйграл все раунды
-        }
     }
+    line("Congratulations, %s!", $name); // вывод, если выиграл все раунды
 }

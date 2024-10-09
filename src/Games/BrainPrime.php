@@ -50,7 +50,7 @@ function generateQuestionAndAnswer(): array
 function playPrimeGame()
 {
     $roundData = [];
-    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
+    for ($roundIndex = 1; $roundIndex <= NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer();
     }
     playRound($roundData, RULES_GAME); // отправляю всю логику в движок

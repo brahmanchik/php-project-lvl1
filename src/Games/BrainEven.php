@@ -21,17 +21,13 @@ function isEven(int $number)
 function generateQuestionAndAnswer(): array
 {
     $randomNumber = rand(MIN_VALUE, MAX_VALUE);
-    if (isEven($randomNumber)) {
-         return [$randomNumber, "yes"]; //правильный ответ будет "yes", если число четное
-    } else {
-        return  [$randomNumber, "no"];
-    }
+    return [$randomNumber, isEven($randomNumber) ? "yes" : "no"];
 }
 
 function playEvenGame()
 {
     $roundData = [];
-    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
+    for ($roundIndex = 1; $roundIndex <= NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос, и правильный ответ
     }
     playRound($roundData, RULES_GAME); // отправляю всю логику в движок

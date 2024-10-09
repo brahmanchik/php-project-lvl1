@@ -13,8 +13,8 @@ use function BrainGames\Engine\playRound;
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 
 //  количество раундов в игре
-const MIN_LENGHT_PROGRESSION = 5;
-const MAX_LENGHT_PROGRESSION = 10;
+const MIN_LENGTH_PROGRESSION = 5;
+const MAX_LENGTH_PROGRESSION = 10;
 const MIN_STEP = 2;
 const MAX_STEP = 5;
 const MIN_BEGIN_PROGRESSION = 1;
@@ -23,13 +23,10 @@ const RULES_GAME = "What number is missing in the progression?";
 
 function generateProgression(): array
 {
-    $length = rand(MIN_LENGHT_PROGRESSION, MAX_LENGHT_PROGRESSION);
+    $length = rand(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
     $step = rand(MIN_STEP, MAX_STEP); // шаг прогрессии
     $start = rand(MIN_BEGIN_PROGRESSION, MAX_BEGIN_PROGRESSION); // начальное число прогрессии
-    $progression = [];
-    for ($i = 0; $i < $length; $i++) {
-        $progression[] = $start + $i * $step;
-    }
+    $progression = range($start, $start + ($length - 1) * $step, $step);
     return $progression;
 }
 function hideElementInProgression(array $progression): array
@@ -51,7 +48,7 @@ function generateQuestionAndAnswer(): array
 function playProgressionGame()
 {
     $roundData = [];
-    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
+    for ($roundIndex = 1; $roundIndex <= NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос, и правильный ответ
     }
     playRound($roundData, RULES_GAME); // отправляю всю логику в движок

@@ -14,24 +14,22 @@ use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
 const RULES_GAME = "What is the result of the expression?";
-function calculateResult(string $operationSymbol, int $numberOne, int $numberTwo): int
+function calculateResult(string $operationSymbol, int $numberOne, int $numberTwo)
 {
-    $result = 0;
     switch ($operationSymbol) {
         case "+":
             $result = $numberOne + $numberTwo;
-            break;
+            return $result;
         case "-":
             $result = $numberOne - $numberTwo;
-            break;
+            return $result;
         case "*":
             $result = $numberOne * $numberTwo;
-            break;
+            return $result;
         default:
             print_r("Error: operator '{$operationSymbol}' is not provided.\n");
-            break; // Можно добавить break и здесь для симметрии
+            break;
     }
-    return $result;
 }
 
 function generateQuestionAndAnswer(): array
@@ -48,7 +46,7 @@ function generateQuestionAndAnswer(): array
 function playCalcGame()
 {
     $roundData = [];
-    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
+    for ($roundIndex = 1; $roundIndex <= NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос 0-ым значением, и правильный ответ значением 1
     }
     playRound($roundData, RULES_GAME); // отправляю данные в движок

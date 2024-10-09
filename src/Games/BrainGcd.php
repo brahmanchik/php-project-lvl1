@@ -18,7 +18,7 @@ const RULES_GAME = "Find the greatest common divisor of given numbers.";
 //Функция использующая алгоритм Евклида, чтобы найти НОД
 function gcd(int $a, int $b): int
 {
-    while ($b != 0) {
+    while ($b !== 0) {
         $temp = $b;
         $b = $a % $b;
         $a = $temp;
@@ -38,7 +38,7 @@ function generateQuestionAndAnswer(): array
 function playGcdGame()
 {
     $roundData = [];
-    for ($roundIndex = 0; $roundIndex < NUMBER_OF_ROUNDS; $roundIndex++) {
+    for ($roundIndex = 1; $roundIndex <= NUMBER_OF_ROUNDS; $roundIndex++) {
         $roundData[] = generateQuestionAndAnswer(); // содержит вопрос, и правильный ответ
     }
     playRound($roundData, RULES_GAME); // отправляю всю логику в движок
