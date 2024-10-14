@@ -10,10 +10,9 @@ use function BrainGames\Engine\playRound;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 
-//  количество раундов в игре
 const MIN_VALUE = 1;
 const MAX_VALUE = 31;
-const RULES_GAME = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+const RULES_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 function isPrime(int $n): bool //проверка, является ли число простым?
 {
     // Если число меньше или равно 1, оно не простое
@@ -41,11 +40,11 @@ function generateQuestionAndAnswer(): array
 {
     $randomNumber = rand(MIN_VALUE, MAX_VALUE);
     if (isPrime($randomNumber)) {
-        $correctAnswer = "yes"; //число простое
+        $correctAnswer = 'yes'; //число простое
     } else {
-        $correctAnswer = "no";
+        $correctAnswer = 'no';
     }
-    return [$randomNumber, $correctAnswer]; //$возвращаю массив из 2 элементов, число и ответ простое это число или нет
+    return [(string) $randomNumber, $correctAnswer]; //$возвращаю массив из 2 элементов, число и ответ простое это число или нет
 }
 function playPrimeGame()
 {

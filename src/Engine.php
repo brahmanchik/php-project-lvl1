@@ -29,15 +29,15 @@ const NUMBER_OF_ROUNDS = 3;
 //функция приветствия и начала игры
 function greeting(): string
 {
-    line("Welcome to the Brain Games!");
-    $name = prompt("May I have your name?");
-    line("Hello, %s!", $name);
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line('Hello, %s!', $name);
     return $name;
 }
-function question(string $question): string//функция запроса ответа на вопрос
+function askQuestion(string $question): string//функция запроса ответа на вопрос
 {
-    line("Question: %s", $question);
-    $answer = prompt("Your answer");
+    line('Question: %s', $question);
+    $answer = prompt('Your answer');
     return $answer;
 }
 // ниже главная функция движка
@@ -46,9 +46,9 @@ function playRound(array $roundData, string $rulesGame): void
     $name = greeting();
     line($rulesGame); // Выводим правила один раз перед началом игры
     foreach ($roundData as [$question, $correctAnswer]) {
-        $answer = question($question);
+        $answer = askQuestion($question);
         // Сравниваем ответ пользователя с правильным ответом
-        if ($answer != $correctAnswer) {
+        if ($answer !== $correctAnswer) {
             line(
                 "'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!",
                 $answer,
@@ -57,8 +57,8 @@ function playRound(array $roundData, string $rulesGame): void
             );
             return;
         } else {
-            line("Correct!");
+            line('Correct!');
         }
     }
-    line("Congratulations, %s!", $name); // вывод, если выиграл все раунды
+    line('Congratulations, %s!', $name); // вывод, если выиграл все раунды
 }

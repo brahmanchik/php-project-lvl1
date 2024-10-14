@@ -12,14 +12,13 @@ use function BrainGames\Engine\playRound;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 
-//  количество раундов в игре
 const MIN_LENGTH_PROGRESSION = 5;
 const MAX_LENGTH_PROGRESSION = 10;
 const MIN_STEP = 2;
 const MAX_STEP = 5;
 const MIN_BEGIN_PROGRESSION = 1;
 const MAX_BEGIN_PROGRESSION = 20;
-const RULES_GAME = "What number is missing in the progression?";
+const RULES_GAME = 'What number is missing in the progression?';
 
 function generateProgression(): array
 {
@@ -43,7 +42,7 @@ function generateQuestionAndAnswer(): array
     $progression = generateProgression();
     // Скрытие элемента
     [$progressionString, $hiddenElement] = hideElementInProgression($progression);
-    return [$progressionString, $hiddenElement]; // возвращаем строку и скрытое число
+    return [$progressionString, (string) $hiddenElement]; // возвращаем строку и скрытое число
 }
 function playProgressionGame()
 {

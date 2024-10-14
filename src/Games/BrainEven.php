@@ -10,10 +10,9 @@ use function BrainGames\Engine\playRound;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 
-//  количество раундов в игре
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
-const RULES_GAME = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+const RULES_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 function isEven(int $number)
 {
     return $number % 2 === 0;
@@ -21,7 +20,7 @@ function isEven(int $number)
 function generateQuestionAndAnswer(): array
 {
     $randomNumber = rand(MIN_VALUE, MAX_VALUE);
-    return [$randomNumber, isEven($randomNumber) ? "yes" : "no"];
+    return [(string) $randomNumber, isEven($randomNumber) ? 'yes' : 'no'];
 }
 
 function playEvenGame()

@@ -11,10 +11,9 @@ use function BrainGames\Engine\playRound;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 
-//  количество раундов в игре
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
-const RULES_GAME = "Find the greatest common divisor of given numbers.";
+const RULES_GAME = 'Find the greatest common divisor of given numbers.';
 //Функция использующая алгоритм Евклида, чтобы найти НОД
 function gcd(int $a, int $b): int
 {
