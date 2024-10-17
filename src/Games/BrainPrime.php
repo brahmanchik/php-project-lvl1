@@ -39,11 +39,7 @@ function isPrime(int $n): bool //проверка, является ли чис�
 function generateQuestionAndAnswer(): array
 {
     $randomNumber = rand(MIN_VALUE, MAX_VALUE);
-    if (isPrime($randomNumber)) {
-        $correctAnswer = 'yes'; //число простое
-    } else {
-        $correctAnswer = 'no';
-    }
+    $correctAnswer = isPrime($randomNumber) ? 'yes' : 'no';
     return [(string) $randomNumber, $correctAnswer]; //$возвращаю массив из 2 элементов, число и ответ простое это число или нет
 }
 function playPrimeGame()
